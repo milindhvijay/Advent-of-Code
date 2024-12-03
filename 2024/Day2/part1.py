@@ -7,12 +7,13 @@ def is_safe(report):
 
 safe_reports = 0
 
-while True:
-   line = input().strip()
-   if not line:
-       break
-   report = [int(x) for x in line.split()]
-   if is_safe(report):
-       safe_reports += 1
+with open('input.txt', 'r') as file:
+    for line in file:
+        line = input().strip()
+        if not line:
+            break
+        report = [int(x) for x in line.split()]
+        if is_safe(report):
+            safe_reports += 1
 
 print(safe_reports)

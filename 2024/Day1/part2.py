@@ -9,12 +9,13 @@ def get_similarity(left, right):
 
 left, right = [], []
 
-while True:
-   line = input().strip()
-   if not line:
-       break
-   x, y = map(int, line.split())
-   left.append(x)
-   right.append(y)
+with open('input.txt', 'r') as file:
+    for line in file:
+        line = line.strip()
+        if not line:
+            break
+        x, y = map(int, line.split())
+        left.append(x)
+        right.append(y)
 
 print(get_similarity(left, right))
